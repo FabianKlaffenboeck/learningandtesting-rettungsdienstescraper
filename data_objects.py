@@ -1,14 +1,16 @@
-class Duty:
-    def __init__(self,_uid,_from_data, _to_data, _name):
-        self.uid = _uid
-        self.from_data = _from_data
-        self.to_data = _to_data
-        self.person_name = _name
+class DutyPlanEntity:
+    def __init__(self, uid, from_data, to_data, name):
+        self.uid = uid
+        self.from_data = from_data
+        self.to_data = to_data
+        self.person_name = name
 
-class Selve_duty:
-    def __init__(self,_uid,_from_data, _to_data, _duration,_other_person):
-        self.uid = _uid
-        self.from_data = _from_data
-        self.to_data = _to_data
-        self.duration = _duration
-        self.other_person = _other_person
+
+class Duty:
+    def __init__(self, uid, duty_type, from_data, to_data, duration, other_person):
+        self.uid = uid
+        self.type = duty_type
+        self.from_data = from_data
+        self.to_data = to_data
+        self.duration = duration
+        self.other_person = other_person

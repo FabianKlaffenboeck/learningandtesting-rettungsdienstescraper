@@ -1,3 +1,3 @@
 ## Env variables
-| UNAME | PWD |
-|-------|-----|
+| UNAME | PWD | RATE |
+|-------|-----|------|

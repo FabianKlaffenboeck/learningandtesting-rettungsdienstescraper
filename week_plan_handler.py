@@ -1,6 +1,6 @@
 import requests
 
-from data_objects import Duty, Selve_duty
+from data_objects import DutyPlanEntity, Duty
 from collections import defaultdict, OrderedDict
 from datetime import datetime
 
@@ -28,7 +28,7 @@ def parse_duty_plan_json(data_json):
     duties = []
 
     for key, value in data_json.items():
-        duties.append(Duty(key, value['begin'], value['end'], value['additionalInfos']['ressource_name']))
+        duties.append(DutyPlanEntity(key, value['begin'], value['end'], value['additionalInfos']['ressource_name']))
 
     grouped_by_from_data = defaultdict(list)
     for duty in duties:
