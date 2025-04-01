@@ -1,0 +1,3 @@
+include:
+  project: 'FKLab/cicd_dry_templates'
+  file: 'templates/python_pipeline.yml'
