@@ -3,6 +3,6 @@ include:
   file: 'templates/python_pipeline.yml'
 
 run-image:
-  stage: run
+  stage: .post
   trigger:
     project: homelab/dockercompose/rettungsdienstescraper
