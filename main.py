@@ -26,7 +26,8 @@ if __name__ == '__main__':
 
     client = paho.Client(client_id="", userdata=None, protocol=paho.MQTTv5)
     client.username_pw_set(mqtt_uname, mqtt_pw)
-    client.connect(mqtt_addr, 1883)
+    client.connect(mqtt_addr, 1883, keepalive=rate * 2)
+    client.loop_start()
 
     while True:
         login_credentials = get_login(uname, pwd)
