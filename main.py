@@ -1,10 +1,11 @@
-from data_objects import Duty
+import json
+import os
+import time
+
 import paho.mqtt.client as paho
+
 from duty_plan_handler import parse_duties_json, get_own_duties
 from login_handler import get_login
-import os
-import json
-import time
 
 if __name__ == '__main__':
 
@@ -37,5 +38,4 @@ if __name__ == '__main__':
         client.publish(mqtt_topic, payload=data, qos=1)
         time.sleep(rate)
 
-    # plan = parse_duty_plan_json(get_duty_plan_json(login_credentials,'2025-02-03', '2025-02-11'))
-    # print(plan)
+    # plan = parse_duty_plan_json(get_duty_plan_json(login_credentials,'2025-02-03', '2025-02-11'))  # print(plan)
