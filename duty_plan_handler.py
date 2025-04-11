@@ -29,11 +29,17 @@ def parse_duties_json(data_json):
 
     for value in data_json:
         other_entities = list(value['allocationInfo'].values())[0]
+
+        try:
+            duty_type = other_entities[0].split(" ")[1]
+        except (IndexError, AttributeError):
+            duty_type = "Other"
+
         duties.append(
             Duty(
                 uid=value['guid'],
                 from_data=value['begin'],
-                duty_type=other_entities[0].split(" ")[1],
+                duty_type=duty_type,
                 to_data=value['end'],
                 duration=value['duration'],
                 other_person=other_entities[1:]
